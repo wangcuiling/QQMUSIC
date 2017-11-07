@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 830px;
+            height: auto;
+            padding: 8px 5px;
+            border: 3px solid #0160b4;
+            margin: 50px auto;
+        }
+
+        ul.imgList li {
+            width: 260px;
+            height: auto;
+            list-style-type: none;
+            float: left;
+        }
+
+        #btn {
+            display: block;
+            width: 100px;
+            height: 37px;
+            background: #666;
+            margin: 0 auto;
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul class="imgList">
+        <li></li>
+        <li style="margin: 0 20px"></li>
+        <li></li>
+    </ul>
+    <input id="btn" type="button" value="加载更多">
+</div>
+</body>
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajax({
+        type: 'get' ,
+        asyn: 'true' ,
+        url : '../php/index.php' ,
+        success: function( res ){
+            alert(res);
+        }
+    });
+</script>
+</html>
